@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "homepage": "https://danubiorafa.github.io/trybers-and-dragons",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "ts-node src/index.ts",
     "dev": "nodemon --watch \"./src/**\" --ext \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node src/index.ts\"",
     "test": "jest --runInBand --verbose",
@@ -43,6 +46,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "gh-pages": "^4.0.0"
   }
 }
