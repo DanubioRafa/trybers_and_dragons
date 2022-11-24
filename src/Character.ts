@@ -15,10 +15,10 @@ class Character implements Fighter {
   private _dexterity: number;
   private name: string;
 
-  constructor(name: string, race: Race = new Elf(name, getRandomInt(1, 10))) {
+  constructor(name: string) {
     this.name = name;
-    this._race = race;
-    this._dexterity = race.dexterity;
+    this._race = new Elf(name, getRandomInt(1, 10));
+    this._dexterity = this.race.dexterity;
     this._archetype = new Mage(this.name);
     this._maxLifePoints = this._race.maxLifePoints / 2;
     this._lifePoints = this._maxLifePoints;
@@ -65,7 +65,7 @@ class Character implements Fighter {
 
     if (damageLessDefense > 0) this._lifePoints -= damageLessDefense;
     if (damageLessDefense <= 0) this._lifePoints -= 1;
-    if (this.lifePoints <= 0) this._lifePoints = -1;
+    if (this._lifePoints <= 0) this._lifePoints = -1;
 
     return this._lifePoints;
   }
@@ -75,10 +75,10 @@ class Character implements Fighter {
   }
 
   public levelUp(): void {
-    this._maxLifePoints += 1;
-    this._strength += 1;
-    this._dexterity += 1;
-    this._defense += 1;
+    this._maxLifePoints += getRandomInt(1, 10);
+    this._strength += getRandomInt(1, 10);
+    this._dexterity += getRandomInt(1, 10);
+    this._defense += getRandomInt(1, 10);
     if (this._energy) this._energy.amount = 10;
 
     if (this._maxLifePoints > this.race.maxLifePoints) {

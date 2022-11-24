@@ -26,7 +26,8 @@ class PVE extends Battle {
         this.attacks(monster);
       }
     });
-    return this.player.lifePoints > 0 ? 1 : -1;
+    return super.fight();
+    /* return this.player.lifePoints > 0 ? 1 : -1; */
   }
 }
 

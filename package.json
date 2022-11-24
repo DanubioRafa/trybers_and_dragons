@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "homepage": "https://danubiorafa.github.io/trybers-and-dragons",
+  "homepage": "https://github.com/betrybe/sd-0x-project-trybers-and-dragons#readme",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -23,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/betrybe/sd-0x-project-trybers-and-dragons/issues"
   },
-  "homepage": "https://github.com/betrybe/sd-0x-project-trybers-and-dragons#readme",
   "devDependencies": {
     "@jest/test-sequencer": "^27.4.6",
     "@types/express": "^4.17.13",
@@ -47,6 +46,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "gh": "^2.8.9",
     "gh-pages": "^4.0.0"
   }
 }
